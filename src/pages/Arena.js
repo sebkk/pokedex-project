@@ -45,12 +45,12 @@ const List = styled.div`
     min-width: 60vw;
     max-width: 100vw;
 
-    :first-child {
-        opacity: ${((winner) => winner === 2 ? 0.5 : 1.0)};
+    div:first-child {
+        opacity: ${(({ winner }) => winner === 2 ? 0.5 : 1.0)};
     };
 
-    :last-child {
-        opacity: ${((winner) => winner === 1 ? 0.5 : 1.0)};
+    div:nth-child(2) {
+        opacity: ${(({ winner }) => winner === 1 ? 0.5 : 1.0)};
     }
 `
 
@@ -182,8 +182,6 @@ const Arena = () => {
         }
         setFlag(true)
     }
-
-    console.log(winner, 'winner')
 
     if (flag === true) {
         return (

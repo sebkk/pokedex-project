@@ -8,12 +8,11 @@ const Card = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin: 15px 80px;
+    margin: 15px 100px;
     box-sizing: border-box;
     padding: 8px;
     background-color: rgba(0, 0, 0, 0.2);
     box-shadow: 0 5px 20px rgba(0,0,0,0.35);
-    transition: transform 200ms;
     width: 250px;
     min-height: 370px;
     height: auto;
