@@ -87,19 +87,19 @@ const PokedexMainPage = ({ setMainPokemon }) => {
             return
         }
 
-        setOffsetValue(offsetValue - 16)
+        setOffsetValue(offsetValue - 15)
         setLimitValue(15)
     }
 
     const nextPage = () => {
-        if (offsetValue === 144) {
+        if (offsetValue === 150) {
             alert(`To ostatnia strona!`)
             return
-        } else if (offsetValue === 128) {
-            setLimitValue(7)
+        } else if (offsetValue === 135) {
+            setLimitValue(1)
         }
 
-        setOffsetValue(offsetValue + 16)
+        setOffsetValue(offsetValue + 15)
     }
 
     const firstPage = () => {

@@ -35,11 +35,6 @@ const Card = styled.div`
     text-align: center;
     color: white;
     text-transform: capitalize;
-
-    :hover {
-        transform: scale(1.1);
-        box-shadow: 0 10px 30px rgba(0,0,0,.35);
-    }
 `
 
 const List = styled.div`
@@ -51,11 +46,11 @@ const List = styled.div`
     max-width: 100vw;
 
     :first-child {
-        opacity: ${({ winner }) => (winner === 1 ? 0.5 : 1.0)};
+        opacity: ${((winner) => winner === 2 ? 0.5 : 1.0)};
     };
 
-    :nth-child(2) {
-        opacity: ${({ winner }) => (winner === 2 ? 0.5 : 1.0)};
+    :last-child {
+        opacity: ${((winner) => winner === 1 ? 0.5 : 1.0)};
     }
 `
 
@@ -68,10 +63,10 @@ const FightButton = styled(Button)({
     boxShadow: '0 5px 20px rgba(0,0,0,0.35);',
     textTransform: 'uppercase',
     fontSize: 18,
-    padding: '10px 10px',
+    padding: '10px 14px',
     margin: '15px',
     borderRadius: '0 0',
-    width: '150px',
+    width: 'auto',
     lineHeight: 1.5,
     backgroundColor: '#d5a100',
     borderColor: '#d5a100',
@@ -102,11 +97,11 @@ const FightButton = styled(Button)({
 const PageButton = styled(Button)({
     boxShadow: '0 5px 20px rgba(0,0,0,0.35);',
     textTransform: 'uppercase',
-    fontSize: 16,
-    padding: '10px 10px',
+    fontSize: 18,
+    padding: '10px 14px',
     margin: '15px',
     borderRadius: '0 0',
-    width: '150px',
+    width: 'auto',
     lineHeight: 1.5,
     backgroundColor: '#d5a100',
     borderColor: '#d5a100',
@@ -178,16 +173,17 @@ const Arena = () => {
 
         if (firstPokemonPowerCount > secondPokemonPowerCount) {
             setWinner(1)
-            alert(`Wygrał ${firstPNCapitalize}!`)
+            // alert(`Wygrał ${firstPNCapitalize}!`)
         } else if (firstPokemonPowerCount < secondPokemonPowerCount) {
             setWinner(2)
-            alert(`Wygrał ${secondPNCapitalize}!`)
+            // alert(`Wygrał ${secondPNCapitalize}!`)
         } else {
             alert('Remis!')
         }
-
         setFlag(true)
     }
+
+    console.log(winner, 'winner')
 
     if (flag === true) {
         return (
@@ -201,7 +197,7 @@ const Arena = () => {
                     </PageButton>
                 </ArenaContainer>
 
-                <List>
+                <List winner={winner} children={ArenaPokemons}>
                     {pokemonData?.map((pokemon, index) => {
                         return (<ArenaPokemons key={index} {...pokemon} />)
                     })}
@@ -222,7 +218,7 @@ const Arena = () => {
                     </FightButton>
                 </ArenaContainer>
 
-                <List>
+                <List winner={winner} children={ArenaPokemons}>
                     <Card></Card>
                     <Card></Card>
                 </List>
@@ -242,7 +238,7 @@ const Arena = () => {
                     </FightButton>
                 </ArenaContainer>
 
-                <List winner={winner}>
+                <List winner={winner} children={ArenaPokemons}>
                     {pokemonData?.map((pokemon, index) => {
                         return (<ArenaPokemons key={index} {...pokemon} />)
                     })}
@@ -264,7 +260,7 @@ const Arena = () => {
                     </FightButton>
                 </ArenaContainer>
 
-                <List children={ArenaPokemons}>
+                <List winner={winner} children={ArenaPokemons}>
                     {pokemonData?.map((pokemon, index) => {
                         return (<ArenaPokemons key={index} {...pokemon} />)
                     })}

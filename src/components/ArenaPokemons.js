@@ -21,10 +21,6 @@ const Card = styled.div`
     color: white;
     text-transform: capitalize;
 
-    :hover {
-        transform: scale(1.1);
-        box-shadow: 0 10px 30px rgba(0,0,0,.35);
-    }
 `
 
 const Image = styled.img`
