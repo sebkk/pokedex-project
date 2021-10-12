@@ -173,10 +173,10 @@ const Arena = () => {
 
         if (firstPokemonPowerCount > secondPokemonPowerCount) {
             setWinner(1)
-            // alert(`Wygrał ${firstPNCapitalize}!`)
+            alert(`Wygrał ${firstPNCapitalize}!`)
         } else if (firstPokemonPowerCount < secondPokemonPowerCount) {
             setWinner(2)
-            // alert(`Wygrał ${secondPNCapitalize}!`)
+            alert(`Wygrał ${secondPNCapitalize}!`)
         } else {
             alert('Remis!')
         }
