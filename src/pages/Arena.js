@@ -244,6 +244,26 @@ const Arena = () => {
                 </List>
 
             </Container>)
+    } else if (!pokemonData) {
+        return (
+            <Container>
+
+                <ArenaContainer>
+                    <FightButton
+                        onClick={handleFight}
+                        variant="contained"
+                        disabled={true}
+                    >
+                        Walcz!
+                    </FightButton>
+                </ArenaContainer>
+
+                <List winner={winner} children={ArenaPokemons}>
+                    <Card></Card>
+                    <Card></Card>
+                </List>
+
+            </Container>)
     } else {
         return (
             <Container>
