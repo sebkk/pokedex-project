@@ -5,6 +5,7 @@ import axios from 'axios';
 
 
 const Card = styled.div`
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -7,7 +7,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import AddIcon from '@mui/icons-material/Add';
 
 const Container = styled.div`
-    width: 100vw;
+    max-width: 100vw;
     height: 100vh;
     padding-top: 20px;
     background-color: #3c5aa6;
@@ -236,12 +236,14 @@ const PokemonDetails = (pokemon) => {
                         {pokemonData?.name}
                         <Icons>
                             <FavoriteIcon
+                                style={{ cursor: 'pointer' }}
                                 color={flag === false ? 'inherit' : 'error'}
                                 fontSize='small'
                                 onClick={handleAddFavorite}
                             />
 
                             <AddIcon
+                                style={{ cursor: 'pointer' }}
                                 color={arenaFlag === false ? 'inherit' : 'success'}
                                 onClick={handleAddArena}
                                 fontSize='medium'

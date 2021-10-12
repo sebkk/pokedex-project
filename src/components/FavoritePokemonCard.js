@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useHistory } from "react-router";
 
 const Card = styled.div`
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;

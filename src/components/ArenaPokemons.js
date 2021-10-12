@@ -8,7 +8,7 @@ const Card = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin: 15px 100px;
+    margin: 15px 80px;
     box-sizing: border-box;
     padding: 8px;
     background-color: rgba(0, 0, 0, 0.2);
@@ -70,6 +70,7 @@ const TextTitle = styled.div`
 `
 
 const PageButton = styled(Button)({
+    cursor: 'pointer',
     textTransform: 'uppercase',
     position: 'relative',
     fontSize: 9,
