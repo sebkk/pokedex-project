@@ -183,34 +183,14 @@ const Arena = () => {
         setFlag(true)
     }
 
-    if (flag === true) {
+    if (!pokemonData || pokemonData?.length === 0) {
         return (
             <Container>
-                <ArenaContainer>
-                    <PageButton
-                        variant='contained'
-                        onClick={handleEndBattle}
-                    >
-                        Opuść arenę!
-                    </PageButton>
-                </ArenaContainer>
-
-                <List winner={winner} children={ArenaPokemons}>
-                    {pokemonData?.map((pokemon, index) => {
-                        return (<ArenaPokemons key={index} {...pokemon} />)
-                    })}
-                </List>
-            </Container>
-        )
-    } else if (pokemonData?.length === 0) {
-        return (
-            <Container>
-
                 <ArenaContainer>
                     <FightButton
                         onClick={handleFight}
                         variant="contained"
-                        disabled={pokemonData?.length === 2 ? false : true}
+                        disabled={true}
                     >
                         Walcz!
                     </FightButton>
@@ -230,7 +210,7 @@ const Arena = () => {
                     <FightButton
                         onClick={handleFight}
                         variant="contained"
-                        disabled={pokemonData?.length === 2 ? false : true}
+                        disabled={true}
                     >
                         Walcz!
                     </FightButton>
@@ -244,26 +224,25 @@ const Arena = () => {
                 </List>
 
             </Container>)
-    } else if (!pokemonData) {
+    } else if (flag === true) {
         return (
             <Container>
-
                 <ArenaContainer>
-                    <FightButton
-                        onClick={handleFight}
-                        variant="contained"
-                        disabled={true}
+                    <PageButton
+                        variant='contained'
+                        onClick={handleEndBattle}
                     >
-                        Walcz!
-                    </FightButton>
+                        Opuść arenę!
+                    </PageButton>
                 </ArenaContainer>
 
                 <List winner={winner} children={ArenaPokemons}>
-                    <Card></Card>
-                    <Card></Card>
+                    {pokemonData?.map((pokemon, index) => {
+                        return (<ArenaPokemons key={index} {...pokemon} />)
+                    })}
                 </List>
-
-            </Container>)
+            </Container>
+        )
     } else {
         return (
             <Container>
@@ -272,7 +251,6 @@ const Arena = () => {
                     <FightButton
                         onClick={handleFight}
                         variant="contained"
-                        disabled={pokemonData?.length === 2 ? false : true}
                     >
                         Walcz!
                     </FightButton>

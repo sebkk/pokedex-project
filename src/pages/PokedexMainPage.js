@@ -65,7 +65,7 @@ const PageButton = styled(Button)({
 
 const BASE_URL = `https://pokeapi.co/api/v2/pokemon/`
 
-const PokedexMainPage = ({ setMainPokemon }) => {
+const PokedexMainPage = () => {
 
     const [limitValue, setLimitValue] = useState(15)
     const [offsetValue, setOffsetValue] = useState(0)
@@ -76,7 +76,6 @@ const PokedexMainPage = ({ setMainPokemon }) => {
         axios.get(`${BASE_URL}?limit=${limitValue}&offset=${offsetValue}`)
             .then(response => {
                 setPokemons(response.data)
-                setMainPokemon(response.data)
             })
             .catch(error => console.log(error))
     }, [offsetValue])

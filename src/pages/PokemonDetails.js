@@ -44,7 +44,7 @@ const DetailsContainer = styled.div`
 `
 
 const Species = styled.h3`
-    font-size: 25px;
+    font-size: 23px;
     margin-bottom: 35px;
     height: 40%;
     text-transform: uppercase;

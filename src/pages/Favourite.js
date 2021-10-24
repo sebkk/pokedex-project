@@ -7,7 +7,8 @@ import FavoritePokemonCard from '../components/FavoritePokemonCard';
 const Container = styled.div`
     max-width: 100vw;
     min-height: 100vh;
-    padding-top: 80px;
+    box-sizing: border-box;
+    padding-top: 100px;
     background-color: #3c5aa6;
     display: flex;
     flex-direction: column;

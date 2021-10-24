@@ -96,10 +96,8 @@ const PageButton = styled(Button)({
     '&:hover': {
         backgroundColor: 'rgba(0, 0, 0, 0.1)',
         borderColor: 'rgba(0, 0, 0, 0.1)',
-        boxShadow: '0 5px 15px rgba(0,0,0,0.4);',
     },
     '&:active': {
-        boxShadow: '0 5px 20px rgba(0,0,0,0.8);',
         backgroundColor: 'rgba(0, 0, 0, 0.1)',
         borderColor: 'rgba(0, 0, 0, 0.1)',
     },

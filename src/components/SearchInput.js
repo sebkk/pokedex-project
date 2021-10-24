@@ -9,10 +9,6 @@ const Container = styled.div`
     box-sizing: border-box;
 `
 
-const Search = styled(TextField)({
-
-})
-
 const SearchInput = ({ setFilter }) => {
 
     const handleSearchChange = (e) => {
@@ -21,7 +17,7 @@ const SearchInput = ({ setFilter }) => {
 
     return (
         <Container>
-            <Search onChange={handleSearchChange} placeholder='Wyszukaj' variant="outlined" />
+            <TextField onChange={handleSearchChange} placeholder='Wyszukaj' variant="filled" />
         </Container>
     )
 }
